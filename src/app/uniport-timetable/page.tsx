@@ -11,7 +11,9 @@ const UniportTimetable = () => {
           DEPARTMENT OF COMPUTER SCIENCE
           (BSc FULL-TIME) FIRST SEMESTER LECTURE TIMETABLE 2021-2023
         </h1>
-          <Timetable />
+          <div className="w-full overflow-x-auto">
+            <Timetable />
+          </div>
         </div>
     </section>
   )

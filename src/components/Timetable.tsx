@@ -66,17 +66,17 @@ const Timetable: React.FC = () => {
       ];
   return (
     <div className="w-full">
-      <div className="grid grid-cols-6 mb-2">
-        <div></div> {/* Placeholder for the top-left corner */}
+      <div className="grid grid-cols-6">
+        <div className="border border-gray-300"></div> {/* Placeholder for the top-left corner */}
         {Data.map((dayData, index) => (
-          <div className="flex items-center justify-center" key={index}>
+          <div className="flex items-center justify-center border border-gray-300 font-bold" key={index}>
             {dayData.day}
           </div>
         ))}
       </div>
       {timeSlots.map((timeSlot, index) => (
         <div className="grid grid-cols-6 h-16" key={index}>
-          <div className="flex items-center px-2 border border-gray-300">{timeSlot}</div>
+          <div className="flex items-center px-2 border border-gray-300 font-bold">{timeSlot}</div>
           {Data.map((dayData, dayIndex) => {
             const courseData = dayData.schedule.find(
               (item) => item.time === timeSlot

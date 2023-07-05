@@ -12,8 +12,8 @@ const CourseModal: React.FC<{
     if (!isOpen) return null;
     
     return (
-      <div className="fixed inset-0 flex items-center justify-center bg-opacity-50 bg-gray-500">
-        <div className="bg-gray-900 p-4 rounded-md grid gap-4 w-[400px]">
+      <div className="fixed inset-0 flex items-center justify-center bg-opacity-50 bg-gray-500 p-4">
+        <div className="bg-gray-900 p-4 rounded-md grid gap-4 w-full max-w-[400px]">
           <Input
             placeholder="Enter Course"
             type="text"

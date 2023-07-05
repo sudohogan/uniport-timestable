@@ -9,8 +9,8 @@ const CoursePreviewModal: React.FC<{
     if (!isOpen) return null;
   
     return (
-      <div className="fixed inset-0 flex items-center justify-center bg-opacity-50 bg-gray-500">
-        <div className="bg-gray-900 p-4 rounded-md w-[400px]">
+      <div className="fixed inset-0 flex items-center justify-center bg-opacity-50 bg-gray-500 p-4">
+        <div className="bg-gray-900 p-4 rounded-md w-full max-w-[400px]">
           <h2 className="text-xl mb-3">Course Preview</h2>
           <p>{course}</p>
           <div className="flex items-center justify-end gap-2">
