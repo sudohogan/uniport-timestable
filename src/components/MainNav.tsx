@@ -18,16 +18,9 @@ export function MainNav({ children }: MainNavProps) {
 
   return (
     <div className="flex gap-6 md:gap-10">
-      <Link href="/" className="hidden items-center space-x-2 md:flex">
+      <Link href="/" className="items-center space-x-2 md:flex">
         Uniport Timetable
       </Link>
-      <button
-        className="flex items-center space-x-2 md:hidden"
-        onClick={() => setShowMobileMenu(!showMobileMenu)}
-      >
-        {showMobileMenu ? <Icons.close /> : <Icons.logo />}
-        <span className="font-bold">Menu</span>
-      </button>
     </div>
   )
 }
