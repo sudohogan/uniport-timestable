@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Data } from './data';
 import CourseModal from './CourseModal';
 import { useToast } from './ui/use-toast';
@@ -17,17 +17,28 @@ const Timetable: React.FC = () => {
   const [selectedCourse, setSelectedCourse] = useState<string>('');
   const [selectedVenue, setSelectedVenue] = useState<string>('');
   const [selectedLecturers, setSelectedLecturers] = useState<string[]>([]);
+  const [isLecturer, setIsLecturer] = useState<boolean>(false);
 
   const { toast } = useToast();
 
-  const storedUser = localStorage.getItem('user');
-  let user = null;
+  // const storedUser = localStorage.getItem('user');
+  // let user = null;
 
-  if (storedUser) {
-    user = JSON.parse(storedUser);
-  }
+  // if (storedUser) {
+  //   user = JSON.parse(storedUser);
+  // }
 
-  const isLecturer = user && user.role === 'lecturer';
+  // const isLecturer = user && user.role === 'lecturer';
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem('user');
+    let user = null;
+
+    if (storedUser) {
+      user = JSON.parse(storedUser);
+      setIsLecturer(user.role === 'lecturer');
+    }
+  }, []);
 
   const handleOpenModal = (dayIndex: number, timeSlotIndex: number) => {
     setSelectedDay(dayIndex);

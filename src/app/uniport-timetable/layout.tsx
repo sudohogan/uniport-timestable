@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 import { MainNav } from "@/components/MainNav";
 import { SiteFooter } from "@/components/SiteFooter";
-// import NameFallback from "@/components/fallback";
+import NameFallback from "@/components/fallback";
 
 interface RootLayoutProps {
     children: ReactNode
@@ -14,7 +14,7 @@ const TimeTableLayout = ({children}: RootLayoutProps) => {
                 <div className="flex h-20 items-center justify-between py-6">
                 <MainNav  />
                 <nav>
-                    {/* <NameFallback /> */}
+                    <NameFallback />
                 </nav>
                 </div>
             </header>
