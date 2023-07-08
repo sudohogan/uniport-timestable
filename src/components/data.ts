@@ -1,5 +1,14 @@
 
-export const Data = [
+interface DataProps {
+  day: string;
+  schedule: {
+    time: string;
+    course: string;
+    venue?: string;
+    lecturers?: string[];
+  }[];
+}
+export const Data: DataProps[] = [
     {
       day: 'Monday',
       schedule: [
@@ -118,21 +127,21 @@ export const Data = [
       day: 'Friday',
       schedule: [
         { time: '8AM - 9AM', course: '' },
-        { time: '9AM - 10AM', course: 'CSC 486.1', venue: "CSC hall 2", lecturer: [
+        { time: '9AM - 10AM', course: 'CSC 486.1', venue: "CSC hall 2", lecturers: [
           "Dr. U. A. Okengwu",
           "Mr. E. Wobidi",
         ] },
-        { time: '10AM - 11AM', course: 'CSC 498.1', venue: "CSC hall 2", lecturer: [
+        { time: '10AM - 11AM', course: 'CSC 498.1', venue: "CSC hall 2", lecturers: [
           "Dr Oghenekaro",
           "Dr Oghenekaro",
           "Dr Oghenekaro"
         ] },
-        { time: '11AM - 12PM', course: 'CSC 496.1', venue: "CSC hall 2", lecturer: [
+        { time: '11AM - 12PM', course: 'CSC 496.1', venue: "CSC hall 2", lecturers: [
           "Prof. L. N. Onyejegbu,",
           "Dr. L.U. Oghenekaro",
           "Dr. U.A. Okengwu"
         ] },
-        { time: '12PM - 1PM', course: 'CSC 481.1', venue: "CSC hall 2", lecturer: [
+        { time: '12PM - 1PM', course: 'CSC 481.1', venue: "CSC hall 2", lecturers: [
           "Dr. B.B. Baridam",
           "Dr. L.U. Oghenekaro",
           "Dr. L. C. Ochei"
@@ -140,7 +149,7 @@ export const Data = [
         { time: '1PM - 2PM', course: '' },
         { time: '2PM - 3PM', course: '' },
         { time: '3PM - 4PM', course: '' },
-        { time: '4PM - 5PM', course: 'GES 400.1', venue: "mbs 22", lecturer: [
+        { time: '4PM - 5PM', course: 'GES 400.1', venue: "mbs 22", lecturers: [
           "Dr. F. E. Onuodu",
           "Dr. U.A. Okengwu",
           "Dr. P. Enyindah"

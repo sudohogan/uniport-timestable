@@ -113,7 +113,7 @@ const Timetable: React.FC = () => {
                     handleOpenPreviewModal(
                       courseData.course,
                       courseData.venue ?? '',
-                      courseData.lecturers,
+                      courseData.lecturers ?? [],
                       dayIndex,
                       index
                     );
