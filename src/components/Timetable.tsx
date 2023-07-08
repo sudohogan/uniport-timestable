@@ -82,7 +82,7 @@ const Timetable: React.FC = () => {
   ];
 
   return (
-    <div className="w-full">
+    <div className="w-full overflow-x-scroll">
       <div className="grid grid-cols-6">
         <div className="border border-gray-300"></div> {/* Placeholder for the top-left corner */}
         {Data.map((dayData, index) => (

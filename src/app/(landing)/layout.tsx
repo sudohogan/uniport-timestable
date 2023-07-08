@@ -1,12 +1,12 @@
+import React, { ReactNode } from "react";
 import { MainNav } from "@/components/MainNav";
 import { SiteFooter } from "@/components/SiteFooter";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import React, { ReactNode } from "react";
 
 interface RootLayoutProps {
-    children: React.ReactNode
+    children: ReactNode
   }
 
 const Landing = ({children}: RootLayoutProps) => {

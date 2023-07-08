@@ -14,7 +14,7 @@ const TimeTableLayout = ({children}: RootLayoutProps) => {
                 <div className="flex h-20 items-center justify-between py-6">
                 <MainNav  />
                 <nav>
-                    <NameFallback />
+                    {/* <NameFallback /> */}
                 </nav>
                 </div>
             </header>
