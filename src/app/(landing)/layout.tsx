@@ -19,7 +19,7 @@ const Landing = ({children}: RootLayoutProps) => {
                     <Link
                     href="/login"
                     className={cn(
-                        buttonVariants({ variant: "secondary", size: "sm" }),
+                        buttonVariants({ size: "sm" }),
                         "px-4"
                     )}
                     >
