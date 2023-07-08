@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 import { MainNav } from "@/components/MainNav";
 import { SiteFooter } from "@/components/SiteFooter";
-import NameFallback from "@/components/fallback";
+// import NameFallback from "@/components/fallback";
 
 interface RootLayoutProps {
     children: ReactNode
