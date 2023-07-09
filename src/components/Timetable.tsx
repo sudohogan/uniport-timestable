@@ -21,15 +21,6 @@ const Timetable: React.FC = () => {
 
   const { toast } = useToast();
 
-  // const storedUser = localStorage.getItem('user');
-  // let user = null;
-
-  // if (storedUser) {
-  //   user = JSON.parse(storedUser);
-  // }
-
-  // const isLecturer = user && user.role === 'lecturer';
-
   useEffect(() => {
     const storedUser = localStorage.getItem('user');
     let user = null;
@@ -120,7 +111,6 @@ const Timetable: React.FC = () => {
                       item.time === timeSlot
                   );
                   if (courseData && courseData.course !== '') {
-                    console.log(courseData);
                     handleOpenPreviewModal(
                       courseData.course,
                       courseData.venue ?? '',

@@ -10,7 +10,7 @@ interface RootLayoutProps {
 const TimeTableLayout = ({children}: RootLayoutProps) => {
     return(
         <div className="flex min-h-screen flex-col relative">
-            <header className="container bg-background">
+            <header className="container bg-background shadow-md">
                 <div className="flex h-20 items-center justify-between py-6">
                 <MainNav  />
                 <nav>

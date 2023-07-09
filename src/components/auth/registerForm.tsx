@@ -37,8 +37,6 @@ export function RegisterForm({ ...className }) {
       password,
     };
     localStorage.setItem("user", JSON.stringify(user));
-
-    console.log(user)
     setIsLoading(true);
     // Redirect to the timetable page
     router.push("/uniport-timetable");
