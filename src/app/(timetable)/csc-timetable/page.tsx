@@ -1,7 +1,7 @@
+import Timetable from '@/components/Timetable';
 import React from 'react'
-import Timetable from '../../components/Timetable';
 
-const UniportTimetable = () => {
+const CSCTimetable = () => {
   return (
     <section className="py-6">
         <div className="container flex flex-col items-center gap-4">
@@ -19,4 +19,4 @@ const UniportTimetable = () => {
   )
 }
 
-export default UniportTimetable;
+export default CSCTimetable;
