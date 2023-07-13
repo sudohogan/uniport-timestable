@@ -1,90 +1,68 @@
-interface Exam{
+ interface Exam {
     date: string;
     day: string;
-    courses: {
-        time: string[] | string;
-        venue: string[] | string;
-        supervisor: string[] | string;
-        lecturers: string[];
-        invigilators: string[];
-    }
+    morning?: {
+      course: string[] | string;
+      time: string;
+      venue: string;
+      supervisor: string;
+      lecturers: string[];
+      invigilators: string[];
+    };
+    afternoon?: {
+      course: string[] | string;
+      time: string;
+      venue: string;
+      supervisor: string;
+      lecturers: string[];
+      invigilators: string[];
+    };
 }
-  
-  interface ExamProps {
-    date: string;
-    day: string;
-    courses: string[] | string;
-    time: string[] | string;
-    venue: string[] | string;
-    supervisor: string[] | string;
-    lecturers: string[];
-    invigilators: string[];
-  }
-  
-export const examTimetable: ExamProps[] = [
-    {
-      date: '2023-07-12',
-      day: 'Monday',
-      courses: ['Mathematics', 'English'],
-      time: ['9am - 12noon', '2pm - 5pm'],
-      venue: 'Room A',
-      supervisor: 'John Doe',
-      lecturers: ['Jane Smith', 'Alice Johnson'],
-      invigilators: ['Alice Johnson', 'Alice Johnson'],
-    },
-    {
-      date: '2023-07-13',
-      day: 'Tuesday',
-      courses: 'Physics',
-      time: '9am - 12noon',
-      venue: 'Room B',
-      supervisor: 'John Doe',
-      lecturers: ['Michael Brown', 'Alice Johnson'],
-      invigilators: ['Bob Davis', 'Alice Johnson'],
-    },
-    // Add more courses here
-  ];
 
-  export const exams = [
+export const exams: Exam[] = [
     {
-      date: '2023-07-15',
+      date: '03/07/2023',
       day: 'Monday',
       morning: {
-        course: 'Mathematics',
+        course: ['GES100.1', 'GES102.1'],
         time: '9:00 AM - 12:00 PM',
-        venue: 'Room A',
-        supervisor: 'John Doe',
-        lecturers: ['Jane Smith', 'Michael Johnson'],
-        invigilators: ['Alice Brown', 'Bob Wilson'],
-      },
-      afternoon: {
-        course: 'Physics',
-        time: '2:00 PM - 5:00 PM',
-        venue: 'Room B',
-        supervisor: 'Sarah Davis',
-        lecturers: ['David Thompson', 'Emily Lee'],
-        invigilators: ['James Miller', 'Olivia Wilson'],
-      },
+        venue: 'BASIC UNIT',
+        supervisor: 'GES Unit',
+        lecturers: ['GES Unit'],
+        invigilators: ['GES Unit'],
+      }
     },
     {
-        date: '2023-07-15',
+        date: '04/07/2023',
         day: 'Tuesday',
-        morning: {
-          course: 'Mathematics',
-          time: '9:00 AM - 12:00 PM',
-          venue: 'Room A',
-          supervisor: 'John Doe',
-          lecturers: ['Jane Smith', 'Michael Johnson'],
-          invigilators: ['Alice Brown', 'Bob Wilson'],
-        },
         afternoon: {
-          course: 'Physics',
+          course: 'CSC 395.1',
           time: '2:00 PM - 5:00 PM',
-          venue: 'Room B',
-          supervisor: 'Sarah Davis',
-          lecturers: ['David Thompson', 'Emily Lee'],
-          invigilators: ['James Miller', 'Olivia Wilson'],
+          venue: 'CSC Hall2',
+          supervisor: 'Prof. P.O. Asagba',
+          lecturers: ['Prof. P.O. Asagba', 'Dr. M.O Musa', 'Dr. R. S. Ogunsakin'],
+          invigilators: ['Prof. P.O. Asagba', 'Dr. M.O Musa', 'Dr. R. S. Ogunsakin', 'Bary', 'Sophia'],
         },
       },
+      {
+        date: '05/07/2023',
+        day: 'Wednesday',
+        morning: {
+          course: ['STA 370.1'],
+          time: '9:00 AM - 12:00 PM',
+          venue: 'CSC Hall2',
+          supervisor: 'Dr. L.U. Oghenekaro',
+          lecturers: ['MATHS DEPT'],
+          invigilators: ['Dr. L.U. Oghenekaro', 'Bary', 'Abigal,'],
+        },
+        afternoon: {
+          course: 'CSC 396.1',
+          time: '2:00 PM - 5:00 PM',
+          venue: 'CSC Hall2',
+          supervisor: 'Dr. E.E. Ogheneovo',
+          lecturers: ['Dr. E.E. Ogheneovo', 'Prof. B.O. Eke', 'Dr. B.B. Baridam', 'Dr. R. S.Ogunsakin'],
+          invigilators: ['Dr. E.E. Ogheneovo', 'Prof. B.O. Eke', 'Dr. B.B. Baridam', 'Dr. R. S.Ogunsakin', 'West', 'Wisdom,'],
+        },
+    },
     // Add more exam objects for other dates...
 ];
