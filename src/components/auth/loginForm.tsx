@@ -31,7 +31,7 @@ const LoginForm = () => {
       if (user.email === email && user.password === password) {
         setIsLoading(true);
         // Redirect to the timetable page
-        router.push("/uniport-timetable");
+        router.push("/csc-timetable");
         toast({
           description: `Welcome back ${user.firstName}`,
         });

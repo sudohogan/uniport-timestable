@@ -4,90 +4,97 @@ import { Data } from './data';
 import CourseModal from './CourseModal';
 import { useToast } from './ui/use-toast';
 import CoursePreviewModal from './CoursePreviewModal';
+import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from './ui/table';
 
 const Timetable: React.FC = () => {
-  const [timetableData, setTimetableData] = useState<any>(Data);
-  const [inputValue, setInputValue] = useState<string>('');
-  const [venueValue, setVenueValue] = useState<string>('');
-  const [lecturerValue, setLecturerValue] = useState<string>('');
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-  const [selectedDay, setSelectedDay] = useState<number>(-1);
-  const [selectedTimeSlot, setSelectedTimeSlot] = useState<number>(-1);
-  const [isPreviewModalOpen, setIsPreviewModalOpen] = useState<boolean>(false);
-  const [selectedCourse, setSelectedCourse] = useState<string>('');
-  const [selectedVenue, setSelectedVenue] = useState<string>('');
-  const [selectedLecturers, setSelectedLecturers] = useState<string[]>([]);
-  const [isLecturer, setIsLecturer] = useState<boolean>(false);
+  // const [timetableData, setTimetableData] = useState<any>(Data);
+  // const [inputValue, setInputValue] = useState<string>('');
+  // const [venueValue, setVenueValue] = useState<string>('');
+  // const [lecturerValue, setLecturerValue] = useState<string>('');
+  // const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  // const [selectedDay, setSelectedDay] = useState<number>(-1);
+  // const [selectedTimeSlot, setSelectedTimeSlot] = useState<number>(-1);
+  // const [isPreviewModalOpen, setIsPreviewModalOpen] = useState<boolean>(false);
+  // const [selectedCourse, setSelectedCourse] = useState<string>('');
+  // const [selectedVenue, setSelectedVenue] = useState<string>('');
+  // const [selectedLecturers, setSelectedLecturers] = useState<string[]>([]);
+  // const [isLecturer, setIsLecturer] = useState<boolean>(false);
 
-  const { toast } = useToast();
+  // const { toast } = useToast();
 
-  useEffect(() => {
-    const storedUser = localStorage.getItem('user');
-    let user = null;
+  // useEffect(() => {
+  //   const storedUser = localStorage.getItem('user');
+  //   let user = null;
 
-    if (storedUser) {
-      user = JSON.parse(storedUser);
-      setIsLecturer(user.role === 'lecturer');
-    }
-  }, []);
+  //   if (storedUser) {
+  //     user = JSON.parse(storedUser);
+  //     setIsLecturer(user.role === 'lecturer');
+  //   }
+  // }, []);
 
-  const handleOpenModal = (dayIndex: number, timeSlotIndex: number) => {
-    setSelectedDay(dayIndex);
-    setSelectedTimeSlot(timeSlotIndex);
-    setIsModalOpen(true);
-  };
+  // const handleOpenModal = (dayIndex: number, timeSlotIndex: number) => {
+  //   setSelectedDay(dayIndex);
+  //   setSelectedTimeSlot(timeSlotIndex);
+  //   setIsModalOpen(true);
+  // };
 
-  const handleOpenPreviewModal = (
-    course: string,
-    venue: string,
-    lecturers: string[],
-    dayIndex: number,
-    timeSlotIndex: number
-  ) => {
-    setSelectedDay(dayIndex);
-    setSelectedTimeSlot(timeSlotIndex);
-    setSelectedCourse(course);
-    setSelectedVenue(venue);
-    setSelectedLecturers(lecturers);
-    setIsPreviewModalOpen(true);
-  };
+  // const handleOpenPreviewModal = (
+  //   course: string,
+  //   venue: string,
+  //   lecturers: string[],
+  //   dayIndex: number,
+  //   timeSlotIndex: number
+  // ) => {
+  //   setSelectedDay(dayIndex);
+  //   setSelectedTimeSlot(timeSlotIndex);
+  //   setSelectedCourse(course);
+  //   setSelectedVenue(venue);
+  //   setSelectedLecturers(lecturers);
+  //   setIsPreviewModalOpen(true);
+  // };
 
-  const handleAddCourseFromModal = () => {
-    const updatedTimetableData = [...timetableData];
-    const updatedSchedule = [...updatedTimetableData[selectedDay].schedule];
-    updatedSchedule[selectedTimeSlot].course = inputValue;
-    updatedSchedule[selectedTimeSlot].venue = venueValue;
-    updatedSchedule[selectedTimeSlot].lecturers = [lecturerValue];
-    updatedTimetableData[selectedDay].schedule = updatedSchedule;
-    setTimetableData(updatedTimetableData);
-    setInputValue('');
-    setVenueValue('');
-    setLecturerValue('');
-    setIsModalOpen(false);
+  // const handleAddCourseFromModal = () => {
+  //   const updatedTimetableData = [...timetableData];
+  //   const updatedSchedule = [...updatedTimetableData[selectedDay].schedule];
+  //   updatedSchedule[selectedTimeSlot].course = inputValue;
+  //   updatedSchedule[selectedTimeSlot].venue = venueValue;
+  //   updatedSchedule[selectedTimeSlot].lecturers = [lecturerValue];
+  //   updatedTimetableData[selectedDay].schedule = updatedSchedule;
+  //   setTimetableData(updatedTimetableData);
+  //   setInputValue('');
+  //   setVenueValue('');
+  //   setLecturerValue('');
+  //   setIsModalOpen(false);
 
-    toast({
-      description: 'Class successfully added',
-    });
-  };
+  //   toast({
+  //     description: 'Class successfully added',
+  //   });
+  // };
 
-  const timeSlots = [
-    '8AM - 9AM',
-    '9AM - 10AM',
-    '10AM - 11AM',
-    '11AM - 12PM',
-    '12PM - 1PM',
-    '1PM - 2PM',
-    '2PM - 3PM',
-    '3PM - 4PM',
-    '4PM - 5PM',
-    '5PM - 6PM',
-  ];
+  // const timeSlots = [
+  //   '8AM - 9AM',
+  //   '9AM - 10AM',
+  //   '10AM - 11AM',
+  //   '11AM - 12PM',
+  //   '12PM - 1PM',
+  //   '1PM - 2PM',
+  //   '2PM - 3PM',
+  //   '3PM - 4PM',
+  //   '4PM - 5PM',
+  //   '5PM - 6PM',
+  // ];
 
   return (
-    <div className="">
-      <div>
+    <>
+      <h1 className="text-xl mb-2 text-center">
+        UNIVERSITY OF PORT HARCOURT
+        FACULTY OF SCIENCE
+        DEPARTMENT OF COMPUTER SCIENCE
+        (BSc FULL-TIME) FIRST SEMESTER LECTURE TIMETABLE 2021-2023
+      </h1>
+      {/* <div>
         <div className="grid grid-cols-6">
-          <div className="border border-gray-300"></div> {/* Placeholder for the top-left corner */}
+          <div className="border border-gray-300"></div>
           {Data.map((dayData, index) => (
             <div className="flex items-center justify-center border border-gray-300" key={index}>
               <p className="text-xs lg:text-xl font-bold">{dayData.day}</p>
@@ -161,8 +168,32 @@ const Timetable: React.FC = () => {
           venue={selectedVenue}
           lecturers={selectedLecturers}
         />
-      </div>
+      </div> */}
+      <div>
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableHead>Time</TableHead>
+            <TableHead>Monday</TableHead>
+            <TableHead>Tuesday</TableHead>
+            <TableHead>Wednesday</TableHead>
+            <TableHead>Thursday</TableHead>
+            <TableHead>Friday</TableHead>
+            <TableHead>Saturday</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          <TableRow>
+
+          </TableRow>
+        </TableBody>
+      </Table>
+      <span className='mt-3'>
+          <p>Dr. C.B. Marcus</p>
+          <p>Time Table Officer</p>
+      </span>
     </div>
+    </>
   );
 };
 

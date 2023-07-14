@@ -39,7 +39,7 @@ export function RegisterForm({ ...className }) {
     localStorage.setItem("user", JSON.stringify(user));
     setIsLoading(true);
     // Redirect to the timetable page
-    router.push("/uniport-timetable");
+    router.push("/csc-timetable");
     toast({
       title: `Welcome ${user.firstName}`,
     });
@@ -95,16 +95,6 @@ export function RegisterForm({ ...className }) {
               required
             />
           </div>
-          <RadioGroup className="grid gap-2 py-2" name="role" required>
-            <div className="flex items-center space-x-2">
-              <RadioGroupItem value="student" id="r1" role="student" onChange={() => setRole("student")} />
-              <Label htmlFor="r1">Student</Label>
-            </div>
-            <div className="flex items-center space-x-2">
-              <RadioGroupItem value="lecturer" id="r2" role="lecturer" onChange={() => setRole("lecturer")} />
-              <Label htmlFor="r2">Lecturer</Label>
-            </div>
-          </RadioGroup>
           <div className="grid gap-1">
             <Label className="sr-only" htmlFor="password">
               Password
@@ -119,6 +109,16 @@ export function RegisterForm({ ...className }) {
               required
             />
           </div>
+          <RadioGroup className="grid gap-2 py-2" name="role" required>
+            <div className="flex items-center space-x-2">
+              <RadioGroupItem value="student" id="r1" role="student" onChange={() => setRole("student")} />
+              <Label htmlFor="r1">Student</Label>
+            </div>
+            <div className="flex items-center space-x-2">
+              <RadioGroupItem value="lecturer" id="r2" role="lecturer" onChange={() => setRole("lecturer")} />
+              <Label htmlFor="r2">Lecturer</Label>
+            </div>
+          </RadioGroup>
           <button
             className={cn(buttonVariants())}
             disabled={isLoading}
