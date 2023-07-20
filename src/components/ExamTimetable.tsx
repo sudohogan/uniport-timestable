@@ -12,7 +12,7 @@ import { exams } from './exam-data'
 
 const ExamTimetable = () => {
   return (
-    <div>
+    <div className="overflow-x-auto">
       <Table>
       <TableCaption>NOTE: GES Registration Handbook is required for GES Examination.</TableCaption>
         <TableHeader>

@@ -1,15 +1,16 @@
 "use client"
 import React, { useEffect, useState } from 'react';
 import { useToast } from '../ui/use-toast';
-import { Data } from '../data';
+import { FirstData } from '../data';
 import CourseModal from '../CourseModal';
 import CoursePreviewModal from '../CoursePreviewModal';
 
 
 const First: React.FC = () => {
-  const [timetableData, setTimetableData] = useState<any>(Data);
+  const [timetableData, setTimetableData] = useState<any>(FirstData);
   const [inputValue, setInputValue] = useState<string>('');
   const [venueValue, setVenueValue] = useState<string>('');
+  const [detailsValue, setDetailsValue] = useState<string>('');
   const [lecturerValue, setLecturerValue] = useState<string>('');
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [selectedDay, setSelectedDay] = useState<number>(-1);
@@ -17,6 +18,7 @@ const First: React.FC = () => {
   const [isPreviewModalOpen, setIsPreviewModalOpen] = useState<boolean>(false);
   const [selectedCourse, setSelectedCourse] = useState<string>('');
   const [selectedVenue, setSelectedVenue] = useState<string>('');
+  // const [selectedDetails, setSelectedDetails] = useState<string>('');
   const [selectedLecturers, setSelectedLecturers] = useState<string[]>([]);
   const [isLecturer, setIsLecturer] = useState<boolean>(false);
 
@@ -49,6 +51,7 @@ const First: React.FC = () => {
     setSelectedTimeSlot(timeSlotIndex);
     setSelectedCourse(course);
     setSelectedVenue(venue);
+    setDetailsValue(detailsValue);
     setSelectedLecturers(lecturers);
     setIsPreviewModalOpen(true);
   };
@@ -58,11 +61,13 @@ const First: React.FC = () => {
     const updatedSchedule = [...updatedTimetableData[selectedDay].schedule];
     updatedSchedule[selectedTimeSlot].course = inputValue;
     updatedSchedule[selectedTimeSlot].venue = venueValue;
+    updatedSchedule[selectedTimeSlot].details = detailsValue;
     updatedSchedule[selectedTimeSlot].lecturers = [lecturerValue];
     updatedTimetableData[selectedDay].schedule = updatedSchedule;
     setTimetableData(updatedTimetableData);
     setInputValue('');
     setVenueValue('');
+    setDetailsValue('')
     setLecturerValue('');
     setIsModalOpen(false);
 
@@ -84,25 +89,26 @@ const First: React.FC = () => {
     '5PM - 6PM',
   ];
 
+
   return (
     <>
       <h1 className="text-xl mb-2 text-center">
        100LVL DEPARTMENT OF COMPUTER SCIENCE
         (BSc FULL-TIME) FIRST SEMESTER LECTURE TIMETABLE 2021-2023
       </h1>
-      <div>
+      <div className="overflow-x-auto">
         <div className="grid grid-cols-6">
           <div className="border border-gray-300"></div> {/* Placeholder for the top-left corner */}
-          {Data.map((dayData, index) => (
+          {FirstData.map((dayData, index) => (
             <div className="flex items-center justify-center border border-gray-300" key={index}>
               <p className="text-xs lg:text-xl font-bold">{dayData.day}</p>
             </div>
           ))}
         </div>
         {timeSlots.map((timeSlot, index) => (
-          <div className="grid grid-cols-6 lg:h-20 h-full w-full" key={index}>
+          <div className="grid grid-cols-6 h-20 w-full" key={index}>
             <div className="flex items-center px-2 border border-gray-300 text-xs lg:text-base font-bold">{timeSlot}</div>
-            {Data.map((dayData, dayIndex) => {
+            {FirstData.map((dayData, dayIndex) => {
               const courseData = dayData.schedule.find(
                 (item: { time: string; course: string; venue?: string; lecturers?: string[] }) =>
                   item.time === timeSlot
@@ -122,7 +128,7 @@ const First: React.FC = () => {
                         courseData.venue ?? '',
                         courseData.lecturers ?? [],
                         dayIndex,
-                        index
+                        index,
                       );
                     } else if (!courseData || courseData.course === '') {
                       if (isLecturer) {
@@ -156,6 +162,8 @@ const First: React.FC = () => {
           setInputValue={setInputValue}
           venueValue={venueValue}
           setVenueValue={setVenueValue}
+          detailsValue={detailsValue}
+          setDetailsValue={setDetailsValue}
           lecturerValue={lecturerValue}
           setLecturerValue={setLecturerValue}
         />
@@ -164,6 +172,7 @@ const First: React.FC = () => {
           onClose={() => setIsPreviewModalOpen(false)}
           course={selectedCourse}
           venue={selectedVenue}
+          details={detailsValue}
           lecturers={selectedLecturers}
         />
       </div>

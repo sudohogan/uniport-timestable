@@ -5,8 +5,9 @@ const CoursePreviewModal: React.FC<{
     onClose: () => void;
     course: string;
     venue: string;
+    details?: string;
     lecturers?: string[]
-  }> = ({ isOpen, onClose, course, venue, lecturers }) => {
+  }> = ({ isOpen, onClose, course, venue, lecturers, details }) => {
     if (!isOpen) return null;
   
     return (
@@ -15,6 +16,7 @@ const CoursePreviewModal: React.FC<{
           <h2 className="text-2xl mb-3">Course Preview</h2>
           <p className="font-semibold text-xl">{course}</p>
           <p>{venue}</p>
+          <p className="space-y-2">{details}</p>
           {lecturers && lecturers.length > 0 && (
             <div className="flex items-center justify-end mb-4">
               <div>

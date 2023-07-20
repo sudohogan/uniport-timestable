@@ -12,7 +12,7 @@ const Timetable: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className="overflow-x-auto">
       <h1 className="text-xl mb-2 text-center">
         UNIVERSITY OF PORT HARCOURT
         FACULTY OF SCIENCE

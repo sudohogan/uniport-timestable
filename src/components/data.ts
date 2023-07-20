@@ -158,3 +158,118 @@ export const Data: DataProps[] = [
       ],
     },
 ]
+
+
+
+export const FirstData: DataProps[] = [
+  {
+    day: 'Monday',
+    schedule: [
+      { time: '8AM - 9AM', course: '' },
+      { time: '9AM - 10AM', course: 'CSC 486.1', venue: "CSC hall 2", lecturers: [
+        "Dr. U. A. Okengwu",
+        "Mr. E. Wobidi",
+      ] },
+      { time: '10AM - 11AM', course: 'CSC 498.1', venue: "CSC hall 2", lecturers: [
+        "Dr Oghenekaro",
+        "Dr Oghenekaro",
+        "Dr Oghenekaro"
+      ] },
+      { time: '11AM - 12PM', course: 'CSC 496.1', venue: "CSC hall 2", lecturers: [
+        "Prof. L. N. Onyejegbu,",
+        "Dr. L.U. Oghenekaro",
+        "Dr. U.A. Okengwu"
+      ] },
+      { time: '12PM - 1PM', course: 'CSC 481.1', venue: "CSC hall 2", lecturers: [
+        "Dr. B.B. Baridam",
+        "Dr. L.U. Oghenekaro",
+        "Dr. L. C. Ochei"
+      ] },
+      { time: '1PM - 2PM', course: '' },
+      { time: '2PM - 3PM', course: '' },
+      { time: '3PM - 4PM', course: '' },
+      { time: '4PM - 5PM', course: 'GES 400.1', venue: "mbs 22", lecturers: [
+        "Dr. F. E. Onuodu",
+        "Dr. U.A. Okengwu",
+        "Dr. P. Enyindah"
+      ] },
+      { time: '5PM - 6PM', course: '' },
+    ],
+  },
+]
+
+
+export const SecondData: DataProps[] = [
+  {
+    day: 'Monday',
+    schedule: [
+      { time: '8AM - 9AM', course: '' },
+      { time: '9AM - 10AM', course: 'CSC 486.1', venue: "CSC hall 2", lecturers: [
+        "Dr. U. A. Okengwu",
+        "Mr. E. Wobidi",
+      ] },
+      { time: '10AM - 11AM', course: 'CSC 498.1', venue: "CSC hall 2", lecturers: [
+        "Dr Oghenekaro",
+        "Dr Oghenekaro",
+        "Dr Oghenekaro"
+      ] },
+      { time: '11AM - 12PM', course: 'CSC 496.1', venue: "CSC hall 2", lecturers: [
+        "Prof. L. N. Onyejegbu,",
+        "Dr. L.U. Oghenekaro",
+        "Dr. U.A. Okengwu"
+      ] },
+      { time: '12PM - 1PM', course: 'CSC 481.1', venue: "CSC hall 2", lecturers: [
+        "Dr. B.B. Baridam",
+        "Dr. L.U. Oghenekaro",
+        "Dr. L. C. Ochei"
+      ] },
+      { time: '1PM - 2PM', course: '' },
+      { time: '2PM - 3PM', course: '' },
+      { time: '3PM - 4PM', course: '' },
+      { time: '4PM - 5PM', course: 'GES 400.1', venue: "mbs 22", lecturers: [
+        "Dr. F. E. Onuodu",
+        "Dr. U.A. Okengwu",
+        "Dr. P. Enyindah"
+      ] },
+      { time: '5PM - 6PM', course: '' },
+    ],
+  },
+]
+
+
+export const ThirdData: DataProps[] = [
+  {
+    day: 'Monday',
+    schedule: [
+      { time: '8AM - 9AM', course: '' },
+      { time: '9AM - 10AM', course: 'CSC 486.1', venue: "CSC hall 2", lecturers: [
+        "Dr. U. A. Okengwu",
+        "Mr. E. Wobidi",
+      ] },
+      { time: '10AM - 11AM', course: 'CSC 498.1', venue: "CSC hall 2", lecturers: [
+        "Dr Oghenekaro",
+        "Dr Oghenekaro",
+        "Dr Oghenekaro"
+      ] },
+      { time: '11AM - 12PM', course: 'CSC 496.1', venue: "CSC hall 2", lecturers: [
+        "Prof. L. N. Onyejegbu,",
+        "Dr. L.U. Oghenekaro",
+        "Dr. U.A. Okengwu"
+      ] },
+      { time: '12PM - 1PM', course: 'CSC 481.1', venue: "CSC hall 2", lecturers: [
+        "Dr. B.B. Baridam",
+        "Dr. L.U. Oghenekaro",
+        "Dr. L. C. Ochei"
+      ] },
+      { time: '1PM - 2PM', course: '' },
+      { time: '2PM - 3PM', course: '' },
+      { time: '3PM - 4PM', course: '' },
+      { time: '4PM - 5PM', course: 'GES 400.1', venue: "mbs 22", lecturers: [
+        "Dr. F. E. Onuodu",
+        "Dr. U.A. Okengwu",
+        "Dr. P. Enyindah"
+      ] },
+      { time: '5PM - 6PM', course: '' },
+    ],
+  },
+]

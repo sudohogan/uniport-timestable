@@ -12,6 +12,8 @@ const CourseModal: React.FC<{
     setInputValue: React.Dispatch<React.SetStateAction<string>>;
     venueValue: string;
     setVenueValue: React.Dispatch<React.SetStateAction<string>>;
+    detailsValue?: string;
+    setDetailsValue: React.Dispatch<React.SetStateAction<string>>;
     lecturerValue: string;
     setLecturerValue: React.Dispatch<React.SetStateAction<string>>;
   }> = ({
@@ -24,6 +26,8 @@ const CourseModal: React.FC<{
     setVenueValue,
     lecturerValue,
     setLecturerValue,
+    detailsValue,
+    setDetailsValue
   }) => {
     if (!isOpen) return null;
     
@@ -42,11 +46,17 @@ const CourseModal: React.FC<{
               value={venueValue}
               onChange={(e) => setVenueValue(e.target.value)}
           />
-          <Textarea
+          <Input
             placeholder="Enter lecturer's name"
             value={lecturerValue}
-            className="resize-none bg-gray-900"
+            type="text"
             onChange={(e) => setLecturerValue(e.target.value)}
+          />
+          <Textarea
+            placeholder="Enter description name"
+            value={detailsValue}
+            className="resize-none"
+            onChange={(e) => setDetailsValue(e.target.value)}
           />
           <div className="justify-end flex items-center gap-3">
             <button

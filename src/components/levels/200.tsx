@@ -1,15 +1,16 @@
 "use client"
 import React, { useEffect, useState } from 'react';
 import { useToast } from '../ui/use-toast';
-import { Data } from '../data';
+import { SecondData } from '../data';
 import CourseModal from '../CourseModal';
 import CoursePreviewModal from '../CoursePreviewModal';
 
 
 const Second: React.FC = () => {
-  const [timetableData, setTimetableData] = useState<any>(Data);
+  const [timetableData, setTimetableData] = useState<any>(SecondData);
   const [inputValue, setInputValue] = useState<string>('');
   const [venueValue, setVenueValue] = useState<string>('');
+  const [detailsValue, setDetailsValue] = useState<string>('');
   const [lecturerValue, setLecturerValue] = useState<string>('');
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [selectedDay, setSelectedDay] = useState<number>(-1);
@@ -93,7 +94,7 @@ const Second: React.FC = () => {
       <div>
         <div className="grid grid-cols-6">
           <div className="border border-gray-300"></div> {/* Placeholder for the top-left corner */}
-          {Data.map((dayData, index) => (
+          {SecondData.map((dayData, index) => (
             <div className="flex items-center justify-center border border-gray-300" key={index}>
               <p className="text-xs lg:text-xl font-bold">{dayData.day}</p>
             </div>
@@ -102,7 +103,7 @@ const Second: React.FC = () => {
         {timeSlots.map((timeSlot, index) => (
           <div className="grid grid-cols-6 lg:h-20 h-full w-full" key={index}>
             <div className="flex items-center px-2 border border-gray-300 text-xs lg:text-base font-bold">{timeSlot}</div>
-            {Data.map((dayData, dayIndex) => {
+            {SecondData.map((dayData, dayIndex) => {
               const courseData = dayData.schedule.find(
                 (item: { time: string; course: string; venue?: string; lecturers?: string[] }) =>
                   item.time === timeSlot
@@ -156,6 +157,7 @@ const Second: React.FC = () => {
           setInputValue={setInputValue}
           venueValue={venueValue}
           setVenueValue={setVenueValue}
+          setDetailsValue={setDetailsValue}
           lecturerValue={lecturerValue}
           setLecturerValue={setLecturerValue}
         />
