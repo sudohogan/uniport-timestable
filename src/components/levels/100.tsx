@@ -18,7 +18,7 @@ const First: React.FC = () => {
   const [isPreviewModalOpen, setIsPreviewModalOpen] = useState<boolean>(false);
   const [selectedCourse, setSelectedCourse] = useState<string>('');
   const [selectedVenue, setSelectedVenue] = useState<string>('');
-  // const [selectedDetails, setSelectedDetails] = useState<string>('');
+  const [selectedDetails, setSelectedDetails] = useState<string>('');
   const [selectedLecturers, setSelectedLecturers] = useState<string[]>([]);
   const [isLecturer, setIsLecturer] = useState<boolean>(false);
 
@@ -44,6 +44,7 @@ const First: React.FC = () => {
     course: string,
     venue: string,
     lecturers: string[],
+    details: string,
     dayIndex: number,
     timeSlotIndex: number
   ) => {
@@ -51,7 +52,7 @@ const First: React.FC = () => {
     setSelectedTimeSlot(timeSlotIndex);
     setSelectedCourse(course);
     setSelectedVenue(venue);
-    setDetailsValue(detailsValue);
+    setSelectedDetails(details);
     setSelectedLecturers(lecturers);
     setIsPreviewModalOpen(true);
   };
@@ -88,7 +89,6 @@ const First: React.FC = () => {
     '4PM - 5PM',
     '5PM - 6PM',
   ];
-
 
   return (
     <>
@@ -127,6 +127,7 @@ const First: React.FC = () => {
                         courseData.course,
                         courseData.venue ?? '',
                         courseData.lecturers ?? [],
+                        courseData.details ?? '',
                         dayIndex,
                         index,
                       );
@@ -172,7 +173,7 @@ const First: React.FC = () => {
           onClose={() => setIsPreviewModalOpen(false)}
           course={selectedCourse}
           venue={selectedVenue}
-          details={detailsValue}
+          details={selectedDetails}
           lecturers={selectedLecturers}
         />
       </div>

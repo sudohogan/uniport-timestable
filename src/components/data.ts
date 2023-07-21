@@ -6,6 +6,7 @@ interface DataProps {
     course: string;
     venue?: string;
     lecturers?: string[];
+    details?: string;
   }[];
 }
 export const Data: DataProps[] = [

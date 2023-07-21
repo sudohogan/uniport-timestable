@@ -34,7 +34,7 @@ const LevelSelector: React.FC = () => {
 
   return (
     <div className='grid gap-3'>
-      <div className='grid justify-items-end'>
+      <div className='lg:grid justify-items-end'>
         <Select onValueChange={handleLevelChange}>
           <SelectTrigger className="w-[180px]">
             <SelectValue placeholder="Select a Level" />
