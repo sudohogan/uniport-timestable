@@ -64,5 +64,16 @@ export const exams: Exam[] = [
           invigilators: ['Dr. E.E. Ogheneovo', 'Prof. B.O. Eke', 'Dr. B.B. Baridam', 'Dr. R. S.Ogunsakin', 'West', 'Wisdom,'],
         },
     },
+    {
+        date: '06/07/2023',
+        day: 'Thursday',
+        morning: {
+          course: ['STA 370.1'],
+          time: '9:00 AM - 12:00 PM',
+          venue: 'CSC Hall2',
+          supervisor: 'Prof. L. N. Onyejegbu',
+          lecturers: ['Prof. L. N. Onyejegbu', 'Dr. U.A. Okengwu', 'Dr. L.U. Oghenekaro'],
+          invigilators: ['Prof. L. N. Onyejegbu', 'Dr. U.A. Okengwu', 'Dr. L.U. Oghenekaro', 'Wisdom', 'Ekeocha'],
+     },
     // Add more exam objects for other dates...
 ];
