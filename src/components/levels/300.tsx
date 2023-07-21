@@ -19,6 +19,7 @@ const Third: React.FC = () => {
   const [selectedCourse, setSelectedCourse] = useState<string>('');
   const [selectedVenue, setSelectedVenue] = useState<string>('');
   const [selectedLecturers, setSelectedLecturers] = useState<string[]>([]);
+  const [selectedDetails, setSelectedDetails] = useState<string>('');
   const [isLecturer, setIsLecturer] = useState<boolean>(false);
 
   const { toast } = useToast();
@@ -43,6 +44,7 @@ const Third: React.FC = () => {
     course: string,
     venue: string,
     lecturers: string[],
+    details: string,
     dayIndex: number,
     timeSlotIndex: number
   ) => {
@@ -50,6 +52,7 @@ const Third: React.FC = () => {
     setSelectedTimeSlot(timeSlotIndex);
     setSelectedCourse(course);
     setSelectedVenue(venue);
+    setSelectedDetails(details);
     setSelectedLecturers(lecturers);
     setIsPreviewModalOpen(true);
   };
@@ -59,11 +62,13 @@ const Third: React.FC = () => {
     const updatedSchedule = [...updatedTimetableData[selectedDay].schedule];
     updatedSchedule[selectedTimeSlot].course = inputValue;
     updatedSchedule[selectedTimeSlot].venue = venueValue;
+    updatedSchedule[selectedTimeSlot].details = detailsValue;
     updatedSchedule[selectedTimeSlot].lecturers = [lecturerValue];
     updatedTimetableData[selectedDay].schedule = updatedSchedule;
     setTimetableData(updatedTimetableData);
     setInputValue('');
     setVenueValue('');
+    setDetailsValue('')
     setLecturerValue('');
     setIsModalOpen(false);
 
@@ -101,7 +106,7 @@ const Third: React.FC = () => {
           ))}
         </div>
         {timeSlots.map((timeSlot, index) => (
-          <div className="grid grid-cols-6 lg:h-20 h-full w-full" key={index}>
+          <div className="grid grid-cols-6 h-20 w-full" key={index}>
             <div className="flex items-center px-2 border border-gray-300 text-xs lg:text-base font-bold">{timeSlot}</div>
             {ThirdData.map((dayData, dayIndex) => {
               const courseData = dayData.schedule.find(
@@ -122,6 +127,7 @@ const Third: React.FC = () => {
                         courseData.course,
                         courseData.venue ?? '',
                         courseData.lecturers ?? [],
+                        courseData.details ?? '',
                         dayIndex,
                         index
                       );
@@ -157,6 +163,7 @@ const Third: React.FC = () => {
           setInputValue={setInputValue}
           venueValue={venueValue}
           setVenueValue={setVenueValue}
+          detailsValue={detailsValue}
           setDetailsValue={setDetailsValue}
           lecturerValue={lecturerValue}
           setLecturerValue={setLecturerValue}
@@ -167,6 +174,7 @@ const Third: React.FC = () => {
           course={selectedCourse}
           venue={selectedVenue}
           lecturers={selectedLecturers}
+          details={selectedDetails}
         />
       </div>
     </>

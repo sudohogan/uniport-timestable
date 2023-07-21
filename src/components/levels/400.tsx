@@ -11,6 +11,7 @@ const Four: React.FC = () => {
   const [inputValue, setInputValue] = useState<string>('');
   const [venueValue, setVenueValue] = useState<string>('');
   const [lecturerValue, setLecturerValue] = useState<string>('');
+  const [detailsValue, setDetailsValue] = useState<string>('');
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [selectedDay, setSelectedDay] = useState<number>(-1);
   const [selectedTimeSlot, setSelectedTimeSlot] = useState<number>(-1);
@@ -18,6 +19,7 @@ const Four: React.FC = () => {
   const [selectedCourse, setSelectedCourse] = useState<string>('');
   const [selectedVenue, setSelectedVenue] = useState<string>('');
   const [selectedLecturers, setSelectedLecturers] = useState<string[]>([]);
+  const [selectedDetails, setSelectedDetails] = useState<string>('');
   const [isLecturer, setIsLecturer] = useState<boolean>(false);
 
   const { toast } = useToast();
@@ -42,6 +44,7 @@ const Four: React.FC = () => {
     course: string,
     venue: string,
     lecturers: string[],
+    details: string,
     dayIndex: number,
     timeSlotIndex: number
   ) => {
@@ -49,6 +52,7 @@ const Four: React.FC = () => {
     setSelectedTimeSlot(timeSlotIndex);
     setSelectedCourse(course);
     setSelectedVenue(venue);
+    setSelectedDetails(details);
     setSelectedLecturers(lecturers);
     setIsPreviewModalOpen(true);
   };
@@ -58,11 +62,13 @@ const Four: React.FC = () => {
     const updatedSchedule = [...updatedTimetableData[selectedDay].schedule];
     updatedSchedule[selectedTimeSlot].course = inputValue;
     updatedSchedule[selectedTimeSlot].venue = venueValue;
+    updatedSchedule[selectedTimeSlot].details = detailsValue;
     updatedSchedule[selectedTimeSlot].lecturers = [lecturerValue];
     updatedTimetableData[selectedDay].schedule = updatedSchedule;
     setTimetableData(updatedTimetableData);
     setInputValue('');
     setVenueValue('');
+    setDetailsValue('')
     setLecturerValue('');
     setIsModalOpen(false);
 
@@ -100,7 +106,7 @@ const Four: React.FC = () => {
           ))}
         </div>
         {timeSlots.map((timeSlot, index) => (
-          <div className="grid grid-cols-6 lg:h-20 h-full w-full" key={index}>
+          <div className="grid grid-cols-6 h-20 w-full" key={index}>
             <div className="flex items-center px-2 border border-gray-300 text-xs lg:text-base font-bold">{timeSlot}</div>
             {Data.map((dayData, dayIndex) => {
               const courseData = dayData.schedule.find(
@@ -121,6 +127,7 @@ const Four: React.FC = () => {
                         courseData.course,
                         courseData.venue ?? '',
                         courseData.lecturers ?? [],
+                        courseData.details ?? '',
                         dayIndex,
                         index
                       );
@@ -158,6 +165,8 @@ const Four: React.FC = () => {
           setVenueValue={setVenueValue}
           lecturerValue={lecturerValue}
           setLecturerValue={setLecturerValue}
+          detailsValue={detailsValue}
+          setDetailsValue={setDetailsValue}
         />
         <CoursePreviewModal
           isOpen={isPreviewModalOpen}
@@ -165,6 +174,7 @@ const Four: React.FC = () => {
           course={selectedCourse}
           venue={selectedVenue}
           lecturers={selectedLecturers}
+          details={selectedDetails}
         />
       </div>
     </>
