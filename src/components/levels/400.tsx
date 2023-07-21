@@ -106,7 +106,7 @@ const Four: React.FC = () => {
           ))}
         </div>
         {timeSlots.map((timeSlot, index) => (
-          <div className="grid grid-cols-6 lg:h-20 h-full w-full" key={index}>
+          <div className="grid grid-cols-6 h-20 w-full" key={index}>
             <div className="flex items-center px-2 border border-gray-300 text-xs lg:text-base font-bold">{timeSlot}</div>
             {Data.map((dayData, dayIndex) => {
               const courseData = dayData.schedule.find(
